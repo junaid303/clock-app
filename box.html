@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Polygons</title>
+    <style>
+        #rectangle {
+            height: 50px;
+            width: 100px;
+            background-color: gray;
+        }
+
+        #square {
+            height: 50px;
+            width: 50px;
+            background-color: red;
+        }
+
+        #circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: green;
+        }
+
+        #oval {
+            height: 50px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Rectangle </h1>
+    <div id="rectangle">
+
+    </div>
+    <h1> Square </h1>
+    <div id="square">
+
+    </div>
+    <h1> Circle </h1>
+    <div id="circle">
+
+    </div>
+    <h1> Oval </h1>
+    <div id="oval">
+
+    </div>
+    <h1> Parallelogram </h1>
+
+    <h1> Triangle </h1>
+
+    <h1> Trapezoid </h1>
+</body>
+
+<script>
+    function growRectangle() {
+        let rectangle = document.getElementById("rectangle");
+        //To access CSS Properties of Rectangle
+        let width = +getComputedStyle(rectangle).width.split("px")[0];
+        let height = +getComputedStyle(rectangle).height.split("px")[0];
+
+        let rectangleInterval = setInterval(() => {
+            if (width >= 1024) {
+                return clearInterval(rectangleInterval);
+            }
+            width += 2;
+            height += 1;
+            rectangle.style.width = `${width}px`;
+            rectangle.style.height = `${height}px`;
+        }, 100);
+    }
+    function growSquare() {
+        let square = document.getElementById("square");
+        //To access CSS Properties of Rectangle
+        let width = +getComputedStyle(square).width.split("px")[0];
+        let height = +getComputedStyle(square).height.split("px")[0];
+
+        let squareInterval = setInterval(() => {
+            if (width >= 1024) {
+                return clearInterval(squareInterval);
+            }
+            width += 2;
+            height += 2;
+            square.style.width = `${width}px`;
+            square.style.height = `${height}px`;
+        }, 100);
+    }
+    growRectangle();
+    growSquare();
+
+</script>
+
+</html>
